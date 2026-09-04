@@ -17,7 +17,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #17365d;
+    color: #12345b;
     background: #ffffff;
     line-height: 1.5;
     overflow-x: hidden;
@@ -33,25 +33,23 @@ a {
     color: inherit;
 }
 
-button {
-    font-family: inherit;
-}
-
 
 /* =========================================================
    TOP BAR
    ========================================================= */
 
 .topbar {
-    background: #0d3564;
+    width: 100%;
+    height: 42px;
+    background: #073566;
     color: #ffffff;
-    min-height: 38px;
-    padding: 0 4%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 0 4%;
     font-size: 13px;
-    font-weight: 500;
 }
 
 .topbar > div {
@@ -62,11 +60,6 @@ button {
 
 .topbar a {
     color: #ffffff;
-    transition: opacity 0.2s ease;
-}
-
-.topbar a:hover {
-    opacity: 0.75;
 }
 
 
@@ -75,139 +68,108 @@ button {
    ========================================================= */
 
 header {
-    background: #ffffff;
     width: 100%;
+    background: #ffffff;
     position: relative;
     z-index: 1000;
 }
 
 .nav {
-    min-height: 105px;
     width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-
-    padding: 12px 4%;
+    min-height: 105px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 30px;
+    padding: 12px 4%;
+    background: #ffffff;
 }
 
-
-/* ---------- NECATEL LOGO ---------- */
-
-/*
-   IMPORTANT:
-   The horizontal logo contains BOTH:
-   - NECATEL symbol
-   - NECATEL SOLUTIONS text
-
-   We therefore give it enough width and prevent flex
-   from shrinking it.
-*/
+/* ---------- LOGO ---------- */
 
 .brand {
     display: flex;
     align-items: center;
-
-    flex: 0 0 auto;
     flex-shrink: 0;
-
-    width: 270px;
-    min-width: 270px;
-
-    overflow: visible;
 }
 
 .brand img {
-    display: block;
-
-    width: 260px;
-    max-width: none;
-    height: auto;
+    width: 250px;
+    height: 82px;
 
     object-fit: contain;
     object-position: left center;
 
-    flex-shrink: 0;
+    display: block;
 }
 
+/*
+   Important:
+   Do NOT use height: 100% or object-fit: cover here.
+   This prevents the NECATEL logo from being cropped.
+*/
 
-/* ---------- NAV LINKS ---------- */
+
+/* ---------- MENU ---------- */
 
 .links {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 25px;
 
-    gap: 24px;
-
-    flex: 1 1 auto;
-    min-width: 0;
+    white-space: nowrap;
 }
 
 .links a {
-    color: #17365d;
-
     font-size: 15px;
     font-weight: 700;
+    color: #102f55;
 
-    white-space: nowrap;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .links a:hover {
-    color: #f68b1f;
-    transform: translateY(-1px);
+    color: #f68b22;
 }
 
 
 /* ---------- GET IN TOUCH BUTTON ---------- */
 
 .links .btn {
-    background: #f68b1f;
+    background: #f68b22;
     color: #ffffff;
 
-    padding: 15px 22px;
+    padding: 14px 22px;
 
     border-radius: 6px;
 
     font-weight: 700;
-    white-space: nowrap;
 
     transition:
         background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.2s ease;
 }
 
 .links .btn:hover {
-    background: #e5780b;
+    background: #e77c13;
     color: #ffffff;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
 }
 
 
 /* ---------- MOBILE MENU BUTTON ---------- */
 
-.menu-toggle {
+.menu {
     display: none;
 
-    background: transparent;
     border: 0;
+    background: transparent;
 
-    color: #17365d;
+    font-size: 25px;
+    color: #12345b;
 
-    font-size: 28px;
     cursor: pointer;
 }
 
@@ -224,106 +186,101 @@ header {
     width: 100%;
 
     display: grid;
-    grid-template-columns: 47% 53%;
+    grid-template-columns: 46% 54%;
 
-    min-height: 535px;
-
-    background: #eaf6fb;
+    min-height: 540px;
 }
 
 
 /* ---------- HERO TEXT ---------- */
 
 .hero-content {
+    background: #eaf7fc;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 65px 7% 65px 7%;
+    padding: 55px 7%;
 }
 
 .hero-content .eyebrow {
-    color: #f68b1f;
+    color: #f68b22;
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 800;
 
     letter-spacing: 2px;
-    text-transform: uppercase;
 
     margin-bottom: 12px;
 }
 
 .hero-content h1 {
-    color: #173b68;
+    color: #103665;
 
     font-size: clamp(40px, 4vw, 62px);
-    line-height: 1.04;
+
+    line-height: 1.08;
 
     font-weight: 800;
 
-    max-width: 680px;
-
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .hero-content h1 span {
-    color: #f68b1f;
+    color: #f68b22;
 }
 
 .hero-content p {
     color: #333333;
 
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 17px;
 
-    max-width: 650px;
+    max-width: 620px;
 
     margin-bottom: 25px;
 }
 
 
-/* ---------- HERO FEATURES ---------- */
+/* =========================================================
+   HERO FEATURES
+   ========================================================= */
 
 .hero-features {
     display: flex;
     align-items: flex-start;
 
-    gap: 25px;
+    gap: 28px;
 
     margin-bottom: 28px;
 }
 
 .hero-features > div {
-    color: #173b68;
+    color: #12345b;
 
     font-size: 13px;
-    font-weight: 700;
+
+    font-weight: 600;
 
     line-height: 1.25;
-
-    display: flex;
-    flex-direction: column;
 }
 
-.hero-features > div::first-letter {
-    color: #173b68;
+.hero-features strong {
+    display: block;
 }
 
 
-/* ---------- HERO BUTTON ---------- */
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
 
 .hero-content .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     width: fit-content;
 
-    background: #0d3564;
+    background: #073566;
     color: #ffffff;
 
-    padding: 17px 28px;
+    padding: 15px 24px;
 
     border-radius: 6px;
 
@@ -332,16 +289,12 @@ header {
 
     transition:
         background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.2s ease;
 }
 
 .hero-content .btn:hover {
-    background: #09294e;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 8px 18px rgba(13, 53, 100, 0.2);
+    background: #0b477f;
+    transform: translateY(-1px);
 }
 
 
@@ -349,9 +302,7 @@ header {
 
 .hero-image {
     width: 100%;
-    height: 100%;
-
-    min-height: 535px;
+    min-height: 540px;
 
     overflow: hidden;
 }
@@ -360,78 +311,52 @@ header {
     width: 100%;
     height: 100%;
 
+    min-height: 540px;
+
     object-fit: cover;
     object-position: center center;
 }
 
 
 /* =========================================================
-   SECTION COMMON STYLES
+   CORE SERVICES
    ========================================================= */
 
-section {
+#services {
     width: 100%;
+    background: #ffffff;
+
+    padding: 55px 4% 70px;
 }
 
-.section-title {
+#services > h2,
+.services-title {
     text-align: center;
 
-    color: #173b68;
+    color: #12345b;
 
-    font-size: clamp(32px, 3vw, 44px);
-    line-height: 1.15;
+    font-size: 34px;
 
     font-weight: 800;
 
     margin-bottom: 8px;
 }
 
-.section-subtitle {
+#services > p,
+.services-subtitle {
     text-align: center;
 
-    color: #667892;
+    color: #60728a;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    margin-bottom: 38px;
+    margin-bottom: 35px;
 }
 
 
 /* =========================================================
-   SERVICES
+   SERVICE GRID
    ========================================================= */
-
-#services {
-    background: #ffffff;
-
-    padding: 55px 5% 75px;
-}
-
-.services-header {
-    text-align: center;
-
-    max-width: 900px;
-
-    margin: 0 auto 35px;
-}
-
-.services-header h2 {
-    color: #173b68;
-
-    font-size: 38px;
-    font-weight: 800;
-
-    margin-bottom: 8px;
-}
-
-.services-header p {
-    color: #667892;
-
-    font-size: 18px;
-}
-
-
-/* ---------- SERVICE GRID ---------- */
 
 .services-grid {
     width: 100%;
@@ -452,304 +377,132 @@ section {
 .service-card {
     background: #ffffff;
 
-    border: 1px solid #dce5ee;
+    border: 1px solid #dce5ed;
 
     border-radius: 8px;
 
-    padding: 27px 24px 30px;
+    padding: 28px 22px;
 
-    min-height: 230px;
+    min-height: 245px;
 
-    box-shadow: 0 2px 8px rgba(13, 53, 100, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 
-    border-color: #c7d8e8;
-
-    box-shadow: 0 10px 25px rgba(13, 53, 100, 0.10);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
 }
 
 
-/* ---------- SERVICE CARD ICON ---------- */
+/* ---------- CARD ICON ---------- */
 
 .service-card .icon {
     width: 48px;
     height: 48px;
 
-    border-radius: 50%;
-
-    background: #0d3564;
+    background: #073566;
     color: #ffffff;
+
+    border-radius: 50%;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 22px;
-
-    margin-bottom: 17px;
-}
-
-
-/* ---------- SERVICE CARD TITLE ---------- */
-
-.service-card h3 {
-    color: #173b68;
-
-    font-size: 18px;
-    line-height: 1.15;
-
-    font-weight: 800;
-
-    margin-bottom: 20px;
-}
-
-
-/* ---------- SERVICE CARD TEXT ---------- */
-
-.service-card p {
-    color: #687a91;
-
-    font-size: 14px;
-    line-height: 1.55;
-
-    margin-bottom: 18px;
-}
-
-
-/* ---------- SERVICE CARD LINK ---------- */
-
-.service-card a {
-    color: #f68b1f;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: color 0.2s ease;
-}
-
-.service-card a:hover {
-    color: #d96d00;
-}
-
-
-/* =========================================================
-   ABOUT SECTION
-   ========================================================= */
-
-#about {
-    padding: 80px 6%;
-
-    background: #f5fafc;
-}
-
-.about-container {
-    max-width: 1250px;
-
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-.about-container img {
-    width: 100%;
-
-    border-radius: 8px;
-}
-
-.about-content h2 {
-    color: #173b68;
-
-    font-size: 40px;
-    font-weight: 800;
-
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #52677f;
-
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 20px;
 
     margin-bottom: 15px;
 }
 
 
-/* =========================================================
-   PRODUCTS
-   ========================================================= */
+/* ---------- CARD TITLE ---------- */
 
-#products {
-    padding: 75px 5%;
-
-    background: #ffffff;
-}
-
-.products-grid {
-    max-width: 1350px;
-
-    margin: 40px auto 0;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.product-card {
-    border: 1px solid #dce5ee;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 25px rgba(13, 53, 100, 0.10);
-}
-
-.product-card img {
-    width: 100%;
-    height: 220px;
-
-    object-fit: cover;
-}
-
-.product-card-content {
-    padding: 22px;
-}
-
-.product-card h3 {
-    color: #173b68;
-
-    font-size: 19px;
-
-    margin-bottom: 10px;
-}
-
-.product-card p {
-    color: #687a91;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   PROJECTS
-   ========================================================= */
-
-#projects {
-    padding: 75px 5%;
-
-    background: #f5fafc;
-}
-
-.projects-grid {
-    max-width: 1350px;
-
-    margin: 40px auto 0;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.project-card {
-    background: #ffffff;
-
-    border: 1px solid #dce5ee;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-}
-
-.project-card img {
-    width: 100%;
-    height: 230px;
-
-    object-fit: cover;
-}
-
-.project-card-content {
-    padding: 22px;
-}
-
-.project-card h3 {
-    color: #173b68;
-
-    font-size: 19px;
-
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    color: #687a91;
-
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   MEDIER
-   ========================================================= */
-
-#medier {
-    padding: 75px 5%;
-
-    background: #ffffff;
-}
-
-
-/* =========================================================
-   CAREERS
-   ========================================================= */
-
-#careers {
-    padding: 75px 5%;
-
-    background: #f5fafc;
-}
-
-.careers-content {
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-.careers-content p {
-    color: #687a91;
+.service-card h3 {
+    color: #12345b;
 
     font-size: 17px;
 
-    line-height: 1.7;
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- CARD DESCRIPTION ---------- */
+
+.service-card p {
+    color: #60728a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+
+/* ---------- CARD LINK ---------- */
+
+.service-card a {
+    color: #f68b22;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.service-card a:hover {
+    color: #d96d08;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+section {
+    width: 100%;
+}
+
+.container {
+    width: 92%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ABOUT / PRODUCTS / PROJECTS / MEDIER / CAREERS
+   ========================================================= */
+
+#about,
+#products,
+#projects,
+#medier,
+#careers,
+#contact {
+    padding: 70px 4%;
+}
+
+#about h2,
+#products h2,
+#projects h2,
+#medier h2,
+#careers h2,
+#contact h2 {
+    color: #12345b;
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
 }
 
 
@@ -758,85 +511,7 @@ section {
    ========================================================= */
 
 #contact {
-    padding: 80px 5%;
-
-    background: #ffffff;
-}
-
-.contact-container {
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    gap: 50px;
-}
-
-.contact-info h2 {
-    color: #173b68;
-
-    font-size: 38px;
-
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    color: #687a91;
-
-    margin-bottom: 12px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-
-    padding: 14px 16px;
-
-    border: 1px solid #d5e0eb;
-
-    border-radius: 5px;
-
-    font-family: inherit;
-    font-size: 15px;
-
-    outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #0d3564;
-}
-
-.contact-form textarea {
-    min-height: 140px;
-
-    resize: vertical;
-}
-
-.contact-form button {
-    width: fit-content;
-
-    background: #f68b1f;
-    color: #ffffff;
-
-    border: none;
-
-    padding: 14px 26px;
-
-    border-radius: 6px;
-
-    font-weight: 700;
-
-    cursor: pointer;
+    background: #f4f9fc;
 }
 
 
@@ -845,95 +520,37 @@ section {
    ========================================================= */
 
 footer {
-    background: #0d3564;
-
+    background: #073566;
     color: #ffffff;
 
-    padding: 45px 5% 25px;
-}
-
-.footer-container {
-    max-width: 1300px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-
-    gap: 40px;
-}
-
-footer h3 {
-    color: #ffffff;
-
-    font-size: 17px;
-
-    margin-bottom: 15px;
-}
-
-footer p,
-footer a {
-    color: #dce7f3;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-footer a:hover {
-    color: #f68b1f;
-}
-
-.footer-bottom {
-    max-width: 1300px;
-
-    margin: 35px auto 0;
-
-    padding-top: 20px;
-
-    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 35px 4%;
 
     text-align: center;
-
-    color: #c8d6e5;
-
-    font-size: 13px;
 }
 
 
 /* =========================================================
-   MOBILE MENU
+   TABLET
    ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
 
     .nav {
         padding-left: 3%;
         padding-right: 3%;
-
-        gap: 18px;
-    }
-
-    .brand {
-        width: 230px;
-        min-width: 230px;
     }
 
     .brand img {
-        width: 225px;
+        width: 220px;
+        height: 78px;
     }
 
     .links {
-        gap: 15px;
+        gap: 17px;
     }
 
     .links a {
-        font-size: 13px;
-    }
-
-    .links .btn {
-        padding: 12px 16px;
+        font-size: 14px;
     }
 
     .hero {
@@ -941,12 +558,11 @@ footer a:hover {
     }
 
     .hero-content {
-        padding-left: 6%;
-        padding-right: 5%;
+        padding: 45px 6%;
     }
 
     .hero-content h1 {
-        font-size: 43px;
+        font-size: 46px;
     }
 
     .services-grid {
@@ -956,42 +572,119 @@ footer a:hover {
 
 
 /* =========================================================
-   TABLET
+   SMALL TABLET
    ========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .topbar {
+        padding: 0 3%;
         font-size: 11px;
-
-        padding: 8px 4%;
     }
 
     .topbar > div {
         gap: 15px;
     }
 
+    .nav {
+        min-height: 90px;
+    }
 
-    /* NAV */
+    .brand img {
+        width: 210px;
+        height: 70px;
+    }
+
+    .links {
+        gap: 12px;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+
+    .links .btn {
+        padding: 11px 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-content {
+        padding: 35px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-features {
+        gap: 14px;
+    }
+
+    .hero-features > div {
+        font-size: 11px;
+    }
+
+    .hero-image,
+    .hero-image img {
+        min-height: 500px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- TOP BAR ---------- */
+
+    .topbar {
+        height: auto;
+        min-height: 38px;
+
+        padding: 8px 15px;
+
+        font-size: 10px;
+    }
+
+    .topbar > div {
+        width: 100%;
+
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+
+    /* ---------- NAV ---------- */
 
     .nav {
         min-height: 82px;
 
-        padding: 10px 5%;
-
-        position: relative;
+        padding: 8px 15px;
     }
 
     .brand {
-        width: 220px;
-        min-width: 220px;
+        max-width: 75%;
     }
 
     .brand img {
-        width: 215px;
+        width: 190px;
+        height: 65px;
+
+        object-fit: contain;
+        object-position: left center;
     }
 
-    .menu-toggle {
+    .menu {
         display: block;
     }
 
@@ -1002,192 +695,167 @@ footer a:hover {
 
         top: 100%;
         left: 0;
-        right: 0;
+
+        width: 100%;
 
         background: #ffffff;
 
-        padding: 20px 5%;
+        padding: 18px;
 
         flex-direction: column;
         align-items: stretch;
 
         gap: 0;
 
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        border-top: 1px solid #e5e5e5;
+
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     }
+
+    /*
+       If your JavaScript adds .active to the menu,
+       this will open it.
+    */
 
     .links.active {
         display: flex;
     }
 
     .links a {
-        padding: 13px 0;
+        width: 100%;
 
-        border-bottom: 1px solid #edf1f5;
+        padding: 12px 5px;
 
         font-size: 15px;
     }
 
     .links .btn {
-        margin-top: 15px;
+        display: block;
 
         text-align: center;
+
+        margin-top: 8px;
     }
 
 
-    /* HERO */
+    /* ---------- HERO ---------- */
 
     .hero {
-        grid-template-columns: 1fr;
+        display: flex;
 
-        min-height: auto;
+        flex-direction: column;
+
+        min-height: 0;
     }
 
     .hero-content {
-        padding: 55px 7%;
-    }
+        width: 100%;
 
-    .hero-content h1 {
-        font-size: 44px;
-    }
+        padding: 38px 22px 35px;
 
-    .hero-image {
-        min-height: 430px;
-        height: 430px;
-    }
-
-
-    /* ABOUT */
-
-    .about-container {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-
-    /* PRODUCTS */
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* PROJECTS */
-
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* CONTACT */
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* FOOTER */
-
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .topbar {
-        min-height: auto;
-
-        padding: 7px 4%;
-
-        font-size: 10px;
-    }
-
-    .topbar > div {
-        gap: 10px;
-    }
-
-
-    /* NAV */
-
-    .nav {
-        min-height: 75px;
-
-        padding: 8px 5%;
-    }
-
-    .brand {
-        width: 190px;
-        min-width: 190px;
-    }
-
-    .brand img {
-        width: 185px;
-    }
-
-
-    /* HERO */
-
-    .hero-content {
-        padding: 45px 7%;
+        order: 1;
     }
 
     .hero-content .eyebrow {
-        font-size: 11px;
+        font-size: 12px;
 
         letter-spacing: 1.5px;
+
+        margin-bottom: 10px;
     }
 
     .hero-content h1 {
         font-size: 36px;
 
-        line-height: 1.05;
+        line-height: 1.08;
+
+        margin-bottom: 15px;
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 15px;
+
+        line-height: 1.55;
+
+        margin-bottom: 20px;
     }
 
-    .hero-features {
-        gap: 13px;
 
-        flex-wrap: wrap;
+    /* ---------- FEATURES ---------- */
+
+    .hero-features {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 13px 20px;
+
+        margin-bottom: 24px;
     }
 
     .hero-features > div {
-        font-size: 11px;
+        font-size: 12px;
     }
+
+
+    /* ---------- HERO BUTTON ---------- */
 
     .hero-content .btn {
-        padding: 14px 21px;
+        width: fit-content;
+
+        padding: 13px 19px;
 
         font-size: 15px;
     }
+
+
+    /* ---------- HERO IMAGE ---------- */
 
     .hero-image {
-        min-height: 330px;
-        height: 330px;
+        width: 100%;
+
+        min-height: 0;
+
+        height: auto;
+
+        order: 2;
+    }
+
+    .hero-image img {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+
+        object-position: center center;
     }
 
 
-    /* SERVICES */
+    /* ---------- SERVICES ---------- */
 
     #services {
-        padding: 45px 5% 60px;
+        padding: 45px 18px 55px;
     }
 
-    .services-header h2 {
-        font-size: 30px;
+    #services > h2,
+    .services-title {
+        font-size: 28px;
+
+        margin-bottom: 7px;
     }
 
-    .services-header p {
-        font-size: 15px;
+    #services > p,
+    .services-subtitle {
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        margin-bottom: 25px;
     }
 
     .services-grid {
@@ -1197,64 +865,138 @@ footer a:hover {
     }
 
     .service-card {
-        min-height: auto;
+        min-height: 0;
+
+        padding: 23px 20px;
+    }
+
+    .service-card h3 {
+        font-size: 17px;
+    }
+
+    .service-card p {
+        font-size: 13px;
     }
 
 
-    /* PRODUCTS */
+    /* ---------- OTHER SECTIONS ---------- */
 
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* PROJECTS */
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* CONTACT */
-
+    #about,
+    #products,
+    #projects,
+    #medier,
+    #careers,
     #contact {
-        padding: 55px 6%;
+        padding: 50px 20px;
     }
 
-    .contact-info h2 {
-        font-size: 30px;
-    }
-
-
-    /* FOOTER */
-
-    .footer-container {
-        grid-template-columns: 1fr;
+    #about h2,
+    #products h2,
+    #projects h2,
+    #medier h2,
+    #careers h2,
+    #contact h2 {
+        font-size: 28px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL SCREENS
+   VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
 
-    .brand {
-        width: 165px;
-        min-width: 165px;
+    .topbar {
+        font-size: 9px;
     }
 
     .brand img {
-        width: 160px;
+        width: 170px;
+        height: 60px;
+    }
+
+    .hero-content {
+        padding: 32px 18px;
     }
 
     .hero-content h1 {
-        font-size: 31px;
+        font-size: 32px;
     }
 
-    .hero-image {
-        min-height: 280px;
-        height: 280px;
+    .hero-content p {
+        font-size: 14px;
     }
+
+    .hero-features {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .hero-features > div {
+        font-size: 11px;
+    }
+
+    .hero-content .btn {
+        font-size: 14px;
+
+        padding: 12px 17px;
+    }
+
+    #services {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    #services > h2,
+    .services-title {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   SAFETY FIXES
+   ========================================================= */
+
+/*
+   Prevent long text from breaking the layout.
+*/
+
+h1,
+h2,
+h3,
+p,
+a {
+    overflow-wrap: break-word;
+}
+
+/*
+   Prevent images from overflowing containers.
+*/
+
+.hero-image,
+.hero-image img {
+    max-width: 100%;
+}
+
+
+/*
+   Keep navigation above hero content.
+*/
+
+header,
+.nav {
+    position: relative;
+    z-index: 1000;
+}
+
+
+/*
+   Make sure buttons never get squeezed.
+*/
+
+.btn {
+    flex-shrink: 0;
 }
